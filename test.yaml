@@ -1,0 +1,7 @@
+train: /cms/user/huangsuyun/dataset/samples/afterbonding/afterbondingall/new_wire_105_1000/images/test/
+val: /cms/user/huangsuyun/dataset/samples/afterbonding/afterbondingall/new_wire_105_1000/images/test/  # 读取此目录进行测试
+test: /cms/user/huangsuyun/dataset/samples/afterbonding/afterbondingall/new_wire_105_1000/images/test/
+
+nc: 1
+
+names: [wire]

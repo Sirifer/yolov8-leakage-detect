@@ -6,9 +6,16 @@ import pandas as pd
 from PyPDF2 import PdfMerger
 
 # ========== 自定义路径 ==========
+<<<<<<< HEAD
 ROOT_DIR = Path("/cms/user/huangsuyun/yolov8/2025_9_15")  # 多个模块文件夹的上级目录
 FINAL_PDF = Path("/cms/user/huangsuyun/yolov8/reports/all_leakage2.pdf")  # 最终合并PDF输出路径
 MODEL_PATH = "/cms/user/huangsuyun/yolov8/runs/detect/train/weights/best.pt"
+=======
+ROOT_DIR = Path("/cms/user/huangsuyun/dataset/2025_9_15")  # 多个模块文件夹的上级目录
+FINAL_PDF = Path("/cms/user/huangsuyun/dataset/reports/all_leakage_test.pdf")  # 最终合并PDF输出路径
+# MODEL_PATH = "/cms/user/huangsuyun/runs/detect/train/weights/best.pt"
+MODEL_PATH = "/cms/user/huangsuyun/runs/detect/train6/weights/best.pt"
+>>>>>>> a003752 (Initial commit: YOLOv8 training project)
 
 CELL_PHOTO_MAP = {  # cell号映射表
        36 : "1",
@@ -160,14 +167,25 @@ def add_images_to_pdf(pdf, image_paths, module_id):
 # ========== YOLO 检测 ==========
 def detect_glue_leakage(module_path):
     model = YOLO(MODEL_PATH)
+<<<<<<< HEAD
     result = model.predict(source=module_path, conf=0.25, save=True, save_txt=True)
+=======
+    result = model.predict(source=module_path, conf=0.1, save=True, save_txt=True)
+>>>>>>> a003752 (Initial commit: YOLOv8 training project)
     pred_dir = result[0].save_dir  # YOLO 输出目录
 
     records = []
     for r in result:
         for box in r.boxes:
             cls_name = r.names[int(box.cls[0])]
+<<<<<<< HEAD
             if cls_name == "glue":
+=======
+            print(r.names)
+            # if cls_name == "glue":
+            if cls_name in ["glue","pollutant"]:    # ★ 两类都记录
+
+>>>>>>> a003752 (Initial commit: YOLOv8 training project)
                 records.append({
                     "image": r.path,
                     "class": cls_name,
@@ -203,6 +221,12 @@ def generate_pdf_for_module(module_path):
     print(f"📄 模块报告生成完成: {output}")
     return output
 
+<<<<<<< HEAD
+=======
+##################################################################################
+
+
+>>>>>>> a003752 (Initial commit: YOLOv8 training project)
 # ========== 主流程 ==========
 def process_all_modules(root_dir, final_pdf_path):
     pdf_files = []
