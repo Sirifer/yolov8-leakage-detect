@@ -1,8 +1,8 @@
 参考网站：https://docs.ultralytics.com/zh/
 
 ## 数据准备
+![Uploading image.png…]()
 
-![[Pasted image 20251128143232.png]]
 ###  收集数据
 - 编号
 ```
