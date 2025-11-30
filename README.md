@@ -159,7 +159,7 @@ exist_ok=True,
 
 #SBATCH --mem-per-cpu=4096 # 每 CPU 内存 (MB)，8*4096=32G
 
-#SBATCH --gpus=v100:2 # 申请 1 张 V100
+#SBATCH --gpus=v100:2 # 申请 2 张 V100
 
 #SBATCH -t 2:00:00 # 最长运行时间
 
