@@ -1,7 +1,7 @@
 参考网站：https://docs.ultralytics.com/zh/
 
 ## 数据准备
-![Uploading image.png…]()
+<img width="862" height="400" alt="image" src="https://github.com/user-attachments/assets/a9815898-756d-4095-9a52-5eb7766ee37a" />
 
 ###  收集数据
 - 编号
